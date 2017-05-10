@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-import funciones as f
+from controller import funciones as f
 
 app = Flask(__name__)
 app.debug = True
