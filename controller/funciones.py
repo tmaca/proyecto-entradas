@@ -30,6 +30,19 @@ class Concierto():
         for x in self.precios:
             print(x)
 
+entradas = {
+            "zona bronce": [35],
+            "zona plata": [50],
+            "zona oro": [70]
+}
+
+class Entradas():
+
+    def __init__(self):
+        self.entradas = self
+
+  
+
     
 
 ''' main program '''
