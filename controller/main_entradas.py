@@ -1,8 +1,9 @@
 from funciones import *
 
 # crear artistas
+mis_artistas = Artistas()
 shakira = Artista('Shakira', 40)
-Jason_Derulo = Artista('Jason Derulo', 41)
+Jason_Derulo = Artista('Jason Derulo', 28)
 
 '''
 {
@@ -13,13 +14,12 @@ Jason_Derulo = Artista('Jason Derulo', 41)
 '''
 
 # crear concierto
+conciertos = []
 concierto_donostia = Concierto()
 concierto_donostia.add_artista(shakira)
-
+concierto_donostia.print_artistas()
 
 ''' main program '''
-
-#s = Artista("Shakira")
 
 concierto = Concierto()
 
