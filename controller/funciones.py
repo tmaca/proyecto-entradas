@@ -1,6 +1,7 @@
 class Artista():
     def __init__(self, name, edad):
         self.name = name
+      #  self.edad = edad
 
 class Concierto():
 
@@ -54,6 +55,10 @@ class Artistas():
         #buscar en self.artistas si existe
         #for
         pass
+        
+    #def print_art(self):
+     #   for x in self.artistas:
+      #      print(x)
 
 class Entradas():
 
