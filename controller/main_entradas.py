@@ -8,35 +8,35 @@ melendi = Artista('Melendi', 38)
 maluma = Artista('Maluma', 23)
 jennifer_lopez = Artista('Jennifer Lopez', 47)
 
-'''
-{
+
+entradas = {
                 "zona bronce": 35,
                 "zona plata": 50,
                 "zona oro": 70
         }
-'''
+
 
 # crear concierto
-conciertos = []
-
+mis_conciertos = Concierto()
 concierto_donostia = Concierto()
+concierto_donostia.add_sitio('Donostia')
 concierto_donostia.add_artista(shakira)
 concierto_donostia.print_artistas()
 
 concierto_bilbao = Concierto()
-concierto_bilbao.add_artista(melendi)
+concierto_bilbao.add_sitio('Bilbao')
 concierto_bilbao.print_artistas()
 
 concierto_madrid = Concierto()
-concierto_madrid.add_artista(maluma)
+concierto_madrid.add_sitio('Madrid')
 concierto_madrid.print_artistas()
 
 concierto_barcelona = Concierto()
-concierto_barcelona.add_artista(jennifer_lopez)
+concierto_barcelona.add_sitio('Barcelona')
 concierto_barcelona.print_artistas()
 
 concierto_valencia = Concierto()
-concierto_valencia.add_artista(jason_derulo)
+concierto_valencia.add_sitio('Valencia')
 concierto_valencia.print_artistas()
 
 
@@ -46,7 +46,7 @@ concierto_valencia.print_artistas()
 concierto = Concierto()
 
 """ seleccion del artista """
-concierto.print_artistas()
+concierto.print_sitios()
 artista = input("Seleccione artista: "'\n')
 print("Ha seleccionado " + artista + '\n')
 
@@ -61,7 +61,7 @@ tipo = input("Seleccione el tipo de entrada que desea: " '\n')
 print("Ha seleccionado: " + tipo + '\n')
 
 """dar el precio"""
-concierto.print_precios(tipo)
+#concierto.print_precios(tipo)
 
 #print(concierto.sitios)
 
