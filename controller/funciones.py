@@ -1,17 +1,33 @@
 class Artista():
     def __init__(self, name, edad):
         self.name = name
-      #  self.edad = edad
+        self.edad = edad
     def __str__(self):
         return self.name
+
+class Artistas():
+    def __init__(self):
+        self.artistas = []
+    
+    def add_artista(self,artista):
+        self.artistas.append(artista)
+    
+    def print_artistas(self):
+        for x in self.artistas:
+            print(x)
 
 class Concierto():
 
     def __init__(self):
         self.artistas = []
         self.sitios = []
-        self.precio = {}
+        self.precio = {
+                "zona_bronce": 35,
+                "zona_plata": 50,
+                "zona_oro": 70
+        }
         self.entradas = []
+        
 
     def __str__(self):
         return self.sitios    
@@ -34,8 +50,10 @@ class Concierto():
         for x in self.precio:
             print(x)
 
-    #def print_precios(self, tipo):
-     #   print(self.precio[tipo])
+    def print_precios(self, tipo):
+        for titulo, precio in self.precio.items():
+            print(titulo + ": " + str(precio))
+    
 
 class Conciertos():
     def __init__(self):
@@ -43,14 +61,6 @@ class Conciertos():
     
     def add_artista(self,concierto):
         self.conciertos.append(concierto)
-
-
-class Artistas():
-    def __init__(self):
-        self.artistas = []
-    
-    def add_artista(self,artista):
-        self.artistas.append(artista)
 
 
 class Entrada():
