@@ -16,7 +16,6 @@ mis_artistas.add_artista(melendi)
 mis_artistas.add_artista(maluma)
 mis_artistas.add_artista(jennifer_lopez)
 
-
 # crear concierto
 mis_conciertos = Concierto()
 
@@ -36,15 +35,6 @@ mis_conciertos.add_sitio('Barcelona')
 concierto_valencia = Concierto()
 mis_conciertos.add_sitio('Valencia')
 
-#crear zonas(prueba)
-#mis_zonas = Concierto()
-#zona1 = Concierto()
-#mis_zonas.add_zona('zona_oro')
-#zona2 = Concierto()
-#mis_zonas.add_zona('zona_plata')
-#zona3 = Concierto()
-#mis_zonas.add_zona('zona_bronce')
-
 ''' main program '''
 
 concierto = Concierto()
@@ -60,12 +50,9 @@ lugar = input("Seleccione lugar del concierto: " '\n')
 print("Ha seleccionado el lugar del concierto: " + lugar + '\n''\n')
 
 """ seleccion de entrada """
-
 mis_conciertos.print_zonas()
-
 tipo = input("Seleccione el tipo de entrada que desea: " '\n')
 print("Ha seleccionado: " + tipo + '\n''\n')
 
 """dar el precio"""
-
 concierto.print_precios(tipo)
