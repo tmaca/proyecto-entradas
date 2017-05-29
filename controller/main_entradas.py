@@ -1,7 +1,6 @@
 from funciones import *
 
 
-
 # crear artistas
 mis_artistas = Artistas()
 shakira = Artista('Shakira', 40)
@@ -61,9 +60,12 @@ lugar = input("Seleccione lugar del concierto: " '\n')
 print("Ha seleccionado el lugar del concierto: " + lugar + '\n''\n')
 
 """ seleccion de entrada """
+
 mis_conciertos.print_zonas()
+
 tipo = input("Seleccione el tipo de entrada que desea: " '\n')
 print("Ha seleccionado: " + tipo + '\n''\n')
 
 """dar el precio"""
+
 concierto.print_precios(tipo)

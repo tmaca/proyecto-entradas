@@ -27,7 +27,7 @@ class Concierto():
                 "zona_oro": 70
         }
         self.entradas = []
-        
+        self.zonas = []
 
     def __str__(self):
         return self.sitios    
@@ -46,13 +46,24 @@ class Concierto():
         for x in self.sitios:
             print(x)
 
+    def print_sitios_artista(self, Artista):
+        for i in self.artistas:
+            if i == Artista:
+                sitios_artista = []
+                sitios_artista.append(self)
+
+    def add_zona(self, zona):
+        self.zonas.append(zona)
+
     def print_zonas(self):
         for x in self.precio:
             print(x)
+    
 
     def print_precios(self, tipo):
         for titulo, precio in self.precio.items():
             print(titulo + ": " + str(precio))
+
     
 
 class Conciertos():
@@ -67,3 +78,4 @@ class Entrada():
     def __init__(self, concierto, tipo):
         self.concierto = concierto
         self.tipo = tipo
+
