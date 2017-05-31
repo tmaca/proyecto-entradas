@@ -16,6 +16,13 @@ class Artistas():
         for x in self.artistas:
             print(x)
 
+    def comprobar_artista(self, artista):
+        for x in self.artistas:
+            if artista == x.name:
+                return True
+        print('No hay conciertos para ese artista')
+        return False
+
 class Concierto():
 
     def __init__(self):
@@ -35,10 +42,6 @@ class Concierto():
     def add_artista(self, artista):
         self.artistas.append(artista)
 
-    def print_artistas(self):
-        for x in self.artistas:
-            print(x)
-
     def add_sitio(self, sitio):
         self.sitios.append(sitio)
 
@@ -50,10 +53,27 @@ class Concierto():
         for x in self.precio:
             print(x)
 
+        
     def print_precios(self, tipo):
         for titulo, precio in self.precio.items():
-            print(titulo + ": " + str(precio))
-
+            if titulo == tipo:
+                print(titulo + ": " + str(precio))
+                return True
+        print('No existe esa zona')        
+        return False
+    
+    def coger_precio_tipo(self,tipo):
+        for titulo, precio in self.precio.items():
+            if titulo == tipo:
+                return str(precio)
+        
+    def comprobar_sitio(self, sitio):
+        for x in self.sitios:
+            if sitio == x:
+                return True
+        print('No hay conciertos en esa ciudad')
+        return False
+            
 
 class Conciertos():
     def __init__(self):
@@ -67,4 +87,3 @@ class Entrada():
     def __init__(self, concierto, tipo):
         self.concierto = concierto
         self.tipo = tipo
-

@@ -40,19 +40,32 @@ mis_conciertos.add_sitio('Valencia')
 concierto = Concierto()
 
 """ seleccion del artista """
-mis_artistas.print_artistas()
-artista = input("Seleccione artista: "'\n')
-print("Ha seleccionado " + artista + '\n''\n')
+comprobar = False
+while comprobar == False:
+    mis_artistas.print_artistas()
+    artista = input("Seleccione artista: "'\n')
+    comprobar = mis_artistas.comprobar_artista(artista)
+    if comprobar == True:
+        print("Ha seleccionado " + artista + '\n''\n')
 
 """ seleccion del lugar """
-mis_conciertos.print_sitios()
-lugar = input("Seleccione lugar del concierto: " '\n')
-print("Ha seleccionado el lugar del concierto: " + lugar + '\n''\n')
+comprobar = False
+while comprobar == False:
+    mis_conciertos.print_sitios()
+    sitio = input("Seleccione lugar del concierto: " '\n')
+    comprobar = mis_conciertos.comprobar_sitio(sitio)
+    if comprobar == True:
+        print("Ha seleccionado el lugar del concierto: " + sitio + '\n''\n')
+
 
 """ seleccion de entrada """
-mis_conciertos.print_zonas()
-tipo = input("Seleccione el tipo de entrada que desea: " '\n')
-print("Ha seleccionado: " + tipo + '\n''\n')
+enc=False
+tipo = ""
+while not enc:
+    mis_conciertos.print_zonas()
+    tipo = input("Seleccione el tipo de entrada que desea: " '\n')
+    print("Ha seleccionado: " + tipo + '\n')
+    enc=concierto.print_precios(tipo)
 
-"""dar el precio"""
-concierto.print_precios(tipo)
+print('Compra finalizada.')
+print('Ha seleccionado: '+artista+'\n''En: '+sitio+'\n'+'Zona: '+tipo+'\n'+'Precio: '+concierto.coger_precio_tipo(tipo))
