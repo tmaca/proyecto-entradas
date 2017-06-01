@@ -2,6 +2,7 @@ class Artista():
     def __init__(self, name, edad):
         self.name = name
         self.edad = edad
+
     def __str__(self):
         return self.name
 
@@ -27,7 +28,7 @@ class Concierto():
 
     def __init__(self):
         self.artistas = []
-        self.sitios = []
+        self.escenarios = []
         self.precio = {
                 "zona_bronce": 35,
                 "zona_plata": 50,
@@ -36,18 +37,12 @@ class Concierto():
         self.entradas = []
         self.zonas = []
 
-    def __str__(self):
-        return self.sitios    
-
     def add_artista(self, artista):
         self.artistas.append(artista)
 
-    def add_sitio(self, sitio):
-        self.sitios.append(sitio)
+    def add_escenario(self, escenario):
+        self.escenarios.append(escenario)
 
-    def print_sitios(self):
-        for x in self.sitios:
-            print(x)
 
     def print_zonas(self):
         for x in self.precio:
@@ -67,13 +62,60 @@ class Concierto():
             if titulo == tipo:
                 return str(precio)
         
-    def comprobar_sitio(self, sitio):
-        for x in self.sitios:
-            if sitio == x:
+    def comprobar_escenario(self, ciudadNombre):
+        for x in self.escenarios:
+            if ciudadNombre == x.ciudadNombre:
                 return True
         print('No hay conciertos en esa ciudad')
         return False
-            
+    
+    def comprobar_escenario_edificios(self, escenario):
+        for x in self.escenarios:
+            if x.escenarioNombre1 == escenario or x.escenarioNombre2 == escenario:
+                return True
+        print('No hay conciertos para ese escenario')
+        return False
+
+class Escenario():
+    def __init__(self, ciudadNombre, escenarioNombre1, escenarioNombre2):
+        self.ciudadNombre= ciudadNombre
+        self.escenarioNombre1 = escenarioNombre1
+        self.escenarioNombre2 = escenarioNombre2
+
+    def __str__(self):
+        return self.ciudadNombre
+
+class Escenarios():
+    def __init__(self):
+        self.escenarios = []
+    
+    def add_escenario(self,escenario):
+        self.escenarios.append(escenario)
+    
+    def print_escenarios(self):
+        for x in self.escenarios:
+            print(x)
+        
+    def print_escenarios_edificios(self, ciudadNombre):
+        for x in self.escenarios:
+            if x.ciudadNombre == ciudadNombre:
+                print(x.escenarioNombre1)
+                print(x.escenarioNombre2)
+
+    def comprobar_escenario(self, escenario):
+        for x in self.escenarios:
+            if escenario == x.ciudadNombre:
+                return True
+        print('No hay conciertos para esa ciudad')
+        return False
+    
+    def comprobar_escenario_edificios(self, escenario):
+        for x in self.escenarios:
+            if x.escenarioNombre1 == escenario or x.escenarioNombre2 == escenario:
+                return True
+        print('No hay conciertos para ese escenario')
+        return False
+
 
 class Conciertos():
     def __init__(self):
